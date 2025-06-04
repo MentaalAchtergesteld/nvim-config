@@ -2,8 +2,8 @@ require("nvim-tree").setup({
 	renderer = {
 		icons = {
 			show = {
-				file = false,
-				folder = false,
+				file = true,
+				folder = true,
 				folder_arrow = true,
 				git = true,
 			},
@@ -22,5 +22,6 @@ require("nvim-tree").setup({
 		update_root = true,
 	},
 })
+
 
 vim.g.nvim_tree_respect_buf_cwd = 1
