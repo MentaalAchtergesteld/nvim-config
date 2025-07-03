@@ -68,6 +68,7 @@ map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>') --open a url under cu
 map("v", "<leader>i", "=gv") --auto indent
 map("n", "<leader>W", ":set wrap!<CR>") --toggle wrap
 
+map("n", "<leader>k", vim.lsp.buf.definition) --toggle wrap
 
 map("n", "<leader>H", function() --toggle htop in term
     _G.htop:toggle()

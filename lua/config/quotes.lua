@@ -1,36 +1,15 @@
-local quote_file = vim.fn.stdpath("config") .. "/lua/config/quotes"
+local QUOTER_PATH = os.getenv("HOME").."/Scripts/quoter";
+local function get_quote()
+	local handle = io.popen("bash "..QUOTER_PATH.." -r");
+	if handle == nil then return "Couldn't find quoter script" end;
 
-local quotes = {}
+	local result = handle:read("*a");
+	handle:close();
 
-local function load_quotes()
-		local file = io.open(quote_file, "r")
-		if not file then return end
-		for line in file:lines() do
-				if line ~= "" then table.insert(quotes, line) end
-		end
-		file:close()
-end
-
-load_quotes()
-
-function get_quote() 
-		local quotes = {}
-		local file = io.open(quote_file, "r")
-		if not file then return "No quotes found :(" end
-
-		for line in file:lines() do
-				if line ~= "" then
-						table.insert(quotes, line)
-				end
-		end
-		file:close()
-
-		if #quotes == 0 then return "No quotes found :(" end
-
-		math.randomseed(os.time())
-		return quotes[math.random(#quotes)]
+	result = result:gsub("^%s+", ""):gsub("%s+$", "")
+	return result
 end
 
 return {
 		get_quote = get_quote
-} 
+}
