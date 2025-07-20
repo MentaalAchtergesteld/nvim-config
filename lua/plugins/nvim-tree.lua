@@ -21,6 +21,11 @@ require("nvim-tree").setup({
 		update_cwd = true,
 		update_root = false,
 	},
+	git = {
+		enable = true,
+		ignore = false,
+		timeout = 400,
+	}
 })
 
 

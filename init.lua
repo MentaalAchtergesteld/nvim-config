@@ -1,4 +1,3 @@
-local vim = vim
 local Plug = vim.fn["plug#"]
 
 vim.call("plug#begin")
@@ -23,9 +22,11 @@ Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
+Plug('L3MON4D3/LuaSnip')
+Plug('saadparwaiz1/cmp_luasnip')
+Plug("rafamadriz/friendly-snippets")
 
 vim.call("plug#end")
-
 
 require("config.theme")
 require("config.mappings")
