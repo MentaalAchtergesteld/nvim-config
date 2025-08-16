@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 
+lspconfig.clangd.setup {}
 lspconfig.rust_analyzer.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.html.setup {}
