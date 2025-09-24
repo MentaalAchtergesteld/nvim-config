@@ -27,6 +27,3 @@ require("nvim-tree").setup({
 		timeout = 400,
 	}
 })
-
-
-vim.g.nvim_tree_respect_buf_cwd = 1

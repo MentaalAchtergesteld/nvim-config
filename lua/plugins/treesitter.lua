@@ -17,4 +17,8 @@ require'nvim-treesitter.configs'.setup {
 		node_decremental = "grm",
 		},
    },
+	 indent = {
+		 enable = true,
+		 disable = { "gdscript", "godot_resource", "gdshader" }
+	 }
 }
